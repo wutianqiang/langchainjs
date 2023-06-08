@@ -4,6 +4,50 @@ import { SerpAPI } from "langchain/tools";
 import { Calculator } from "langchain/tools/calculator";
 
 const model = new OpenAI({ temperature: 0 });
+
+/*
+import type { BaiduParameters } from "serpapi";
+import { getJson } from "serpapi";
+
+const params = {
+  q: "Coffee",
+  api_key: "af6004d6320c824c737422da0e3d2e5cdd467b966c4dec0ffdd5ad0ee6496be0"
+} satisfies BaiduParameters;
+
+// Show result as JSON
+const response = await getJson("baidu", params);
+console.log(response);
+*/
+/*
+import type { BingParameters } from "serpapi";
+import { getJson } from "serpapi";
+
+const params = {
+  q: "Coffee",
+  cc: "US",
+  api_key: "af6004d6320c824c737422da0e3d2e5cdd467b966c4dec0ffdd5ad0ee6496be0"
+} satisfies BingParameters;
+
+// Show result as JSON
+const response = await getJson("bing", params);
+console.log(response);
+
+import type { YoutubeParameters } from "serpapi";
+import { getJson } from "serpapi";
+
+const params = {
+  search_query: "star wars",
+  api_key: "af6004d6320c824c737422da0e3d2e5cdd467b966c4dec0ffdd5ad0ee6496be0"
+} satisfies YoutubeParameters;
+
+// Show result as JSON
+const response = await getJson("youtube", params);
+console.log(response["movie_results"]);
+
+*/
+
+
+
 const tools = [
   new SerpAPI(process.env.SERPAPI_API_KEY, {
     location: "Austin,Texas,United States",
